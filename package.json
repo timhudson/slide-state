@@ -1,0 +1,28 @@
+{
+  "name": "slide-state",
+  "version": "1.0.0",
+  "description": "State controller for slide presentations",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape tests.js"
+  },
+  "author": "Tim Hudson",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/timhudson/slide-state.git"
+  },
+  "keywords": [
+    "slide",
+    "slides",
+    "deck",
+    "presentation"
+  ],
+  "bugs": {
+    "url": "https://github.com/timhudson/slide-state/issues"
+  },
+  "homepage": "https://github.com/timhudson/slide-state"
+}
