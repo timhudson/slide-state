@@ -1,31 +1,50 @@
+var ObservStruct = require('observ-struct')
+
 module.exports = function() {
-  var state = {page: 1, sub: 0}
+  var state = ObservStruct({
+    page: 1,
+    sub: 0
+  })
 
-  function slideState() {
+  state.next = function() {
+    var current = state()
+    state.set({
+      page: current.page + 1,
+      sub: 0
+    })
     return state
   }
 
-  slideState.next = function() {
-    state.page = state.page + 1
-    state.sub = 0
+  state.prev = function() {
+    var current = state()
+    if (current.page === 1) return
+
+    state.set({
+      page: current.page - 1,
+      sub: 0
+    })
     return state
   }
 
-  slideState.prev = function() {
-    state.page = state.page - 1
-    state.sub = 0
+  state.nextSub = function() {
+    var current = state()
+    state.set({
+      page: current.page,
+      sub: current.sub + 1
+    })
     return state
   }
 
-  slideState.nextSub = function() {
-    state.sub = state.sub + 1
+  state.prevSub = function() {
+    var current = state()
+    if (current.sub === 0) return
+
+    state.set({
+      page: current.page,
+      sub: current.sub - 1
+    })
     return state
   }
 
-  slideState.prevSub = function() {
-    state.sub = state.sub - 1
-    return state
-  }
-
-  return slideState
+  return state
 }

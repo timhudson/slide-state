@@ -14,12 +14,15 @@ test('next', function(t) {
 })
 
 test('prev', function(t) {
-  t.plan(2)
+  t.plan(3)
   var state = slideState()
 
   state.next()
   state.nextSub()
   t.deepEqual(state(), {page: 2, sub: 1})
+
+  state.prev()
+  t.deepEqual(state(), {page: 1, sub: 0})
 
   state.prev()
   t.deepEqual(state(), {page: 1, sub: 0})
@@ -34,11 +37,13 @@ test('nextSub', function(t) {
 })
 
 test('prevSub', function(t) {
-  t.plan(2)
+  t.plan(3)
   var state = slideState()
 
   state.nextSub()
   t.deepEqual(state(), {page: 1, sub: 1})
+  state.prevSub()
+  t.deepEqual(state(), {page: 1, sub: 0})
   state.prevSub()
   t.deepEqual(state(), {page: 1, sub: 0})
 })

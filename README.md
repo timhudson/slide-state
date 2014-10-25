@@ -11,22 +11,22 @@ State controller for slide presentations
 
 ``` js
 var slideState = require('slide-state')
-
 var state = slideState()
+
+state(function(current) {
+  console.log(current)
+})
 
 console.log(state())
 // {page: 1, sub: 0}
 
 state.next()
-console.log(state())
 // {page: 2, sub: 0}
 
 state.nextSub()
-console.log(state())
 // {page: 2, sub: 1}
 
 state.prev()
-console.log(state())
 // {page: 1, sub: 0}
 ```
 

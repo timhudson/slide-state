@@ -37,5 +37,8 @@
   "bugs": {
     "url": "https://github.com/timhudson/slide-state/issues"
   },
-  "homepage": "https://github.com/timhudson/slide-state"
+  "homepage": "https://github.com/timhudson/slide-state",
+  "dependencies": {
+    "observ-struct": "^6.0.0"
+  }
 }
